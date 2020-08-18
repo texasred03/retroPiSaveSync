@@ -29,7 +29,7 @@ def delSaveFile(id):
 def uploadSaveFile(filePath, gameName, gameSystem, timeutc):
   uploadName = gameSystem + "_" + gameName
   print(uploadName + " uploading to gDrive.")
-  saveFile = drive.CreateFile({'title': uploadName, 'description': timeutc, 'parents': [{'id': '1qHwnhIXgo-POKvBcyIT33QubA5_vMLqc'}]})
+  saveFile = drive.CreateFile({'title': uploadName, 'description': timeutc, 'parents': [{'id': 'FOLDERID'}]})
   saveFile.SetContentFile(filePath)
   saveFile.Upload()
 
@@ -46,7 +46,7 @@ gauth = GoogleAuth()
 gauth.LoadCredentialsFile("gDriveCreds.txt")
 drive = GoogleDrive(gauth)
 
-save_folder_list = ListFolder('1qHwnhIXgo-POKvBcyIT33QubA5_vMLqc')
+save_folder_list = ListFolder('FOLDERID')
 save_file_list = []
 for saveFile in save_folder_list:
   save_file_list.append(saveFile['title'])
