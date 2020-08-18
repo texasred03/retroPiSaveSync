@@ -26,7 +26,7 @@ def delSaveFile(id):
   delFile = drive.CreateFile({'id': id})
   delFile.Trash()
   
-  def uploadSaveFile(filePath, gameName, gameSystem, timeutc):
+def uploadSaveFile(filePath, gameName, gameSystem, timeutc):
   uploadName = gameSystem + "_" + gameName
   print(uploadName + " uploading to gDrive.")
   saveFile = drive.CreateFile({'title': uploadName, 'description': timeutc, 'parents': [{'id': '1qHwnhIXgo-POKvBcyIT33QubA5_vMLqc'}]})
